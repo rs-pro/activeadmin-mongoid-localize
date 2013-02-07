@@ -22,7 +22,12 @@ Really simple:
 
     f.inputs do
       f.localized_input :title
+      
+      # and ckeditor too!
+      f.localized_input :content, as: :ckeditor
     end
+
+CKEditor is tested with my fork: https://github.com/glebtv/ckeditor
 
 ## Contributing
 
