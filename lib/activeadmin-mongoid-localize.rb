@@ -42,8 +42,15 @@ module Formtastic
         ::I18n.available_locales.each do |locale|
           args[:value] =  (t.nil? || t[locale.to_s].nil?) ? '' : t[locale.to_s]
           # locale.to_s
-          args[:label] = CGI.escapeHTML(self.object.class.human_attribute_name(name)) + " #{template.image_tag "aml/flags/#{locale.to_s}.png", alt: locale.to_s, title: locale.to_s}"
-          args[:label] = args[:label].html_safe
+
+          label = CGI.escapeHTML(self.object.class.human_attribute_name(name)) + " #{template.image_tag "aml/flags/#{locale.to_s}.png", alt: locale.to_s, title: locale.to_s}"
+          if args[:as] == :ckeditor
+            form_buffers.last << "<h3 style='margin: 10px 0px 0px 10px;'>#{label}</h3>".html_safe
+            args[:label] = false
+          else
+            args[:label] = label.html_safe
+          end
+
           form_buffers.last << lf.input(locale, args)
           form_buffers.last
         end
