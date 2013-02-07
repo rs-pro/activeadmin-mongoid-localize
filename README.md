@@ -1,6 +1,6 @@
 # Activeadmin::Mongoid::Localize
 
-
+Easily edit mongoid localized fields in ActiveAdmin (all locales on one page)
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
+Really simple:
 
+    f.inputs do
+      f.localized_input :title
+    end
 
 ## Contributing
 

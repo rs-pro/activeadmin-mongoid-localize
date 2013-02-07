@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = ActiveAdmin::Mongoid::Localize::VERSION
   gem.authors       = ["Gleb Tv"]
   gem.email         = ["glebtv@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Easily edit mongoid localized fields in ActiveAdmin (all locales on one page)}
+  gem.summary       = %q{Mongoid localized fields for active admin}
+  gem.homepage      = "https://github.com/rs-pro/activeadmin-mongoid-localize"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
