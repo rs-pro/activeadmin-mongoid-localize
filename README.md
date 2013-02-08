@@ -27,7 +27,8 @@ Really simple:
       f.localized_input :content, as: :ckeditor
     end
 
-CKEditor is tested with my fork: https://github.com/glebtv/ckeditor
+CKEditor is tested & working with my fork: https://github.com/glebtv/ckeditor
+ActiveAdmin-mongoid is tested & working with my fork: https://github.com/rs-pro/activeadmin-mongoid
 
 ## Contributing
 
