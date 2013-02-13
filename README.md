@@ -20,11 +20,26 @@ Or install it yourself as:
 
 Really simple:
 
+    # in model
+    field :title, type: String, localize: true
+    field :content, type: String, localize: true
+
+    # in admin
     f.inputs do
       f.localized_input :title
       
       # and ckeditor too!
       f.localized_input :content, as: :ckeditor
+    end
+
+    # displaying in show action
+    show do |f|
+        panel I18n.t('fields') do
+            localize_attributes_table_for f do
+                row :name
+                row :text
+            end
+        end
     end
 
 CKEditor is tested & working with my fork: https://github.com/glebtv/ckeditor
