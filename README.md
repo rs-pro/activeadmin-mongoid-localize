@@ -47,6 +47,7 @@ Really simple:
     end
 
 CKEditor is tested & working with my fork: https://github.com/glebtv/ckeditor
+
 ActiveAdmin-mongoid is tested & working with my fork: https://github.com/rs-pro/activeadmin-mongoid
 
 ## Contributing
