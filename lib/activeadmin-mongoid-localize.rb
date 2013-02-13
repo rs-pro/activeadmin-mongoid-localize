@@ -9,9 +9,6 @@ module ActiveAdmin
 
       class Engine < Rails::Engine
       end
-
-      # return in case our input is last
-      self.form_buffers.last
     end
   end
 end
