@@ -2,6 +2,10 @@
 
 Easily edit mongoid localized fields in ActiveAdmin (all locales on one page)
 
+## Screenshot
+
+ ![AML](http://rscx.ru/aml.jpg)
+
 ## Installation
 
 Add this line to your application's Gemfile:
