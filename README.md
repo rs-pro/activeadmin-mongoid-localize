@@ -2,6 +2,10 @@
 
 Easily edit mongoid localized fields in ActiveAdmin (all locales on one page)
 
+## Screenshot
+
+ ![AML](http://rscx.ru/aml.jpg)
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -43,6 +47,7 @@ Really simple:
     end
 
 CKEditor is tested & working with my fork: https://github.com/glebtv/ckeditor
+
 ActiveAdmin-mongoid is tested & working with my fork: https://github.com/rs-pro/activeadmin-mongoid
 
 ## Contributing
