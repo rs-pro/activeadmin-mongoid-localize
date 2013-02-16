@@ -1,5 +1,8 @@
 require "activeadmin-mongoid-localize/version"
+
 require 'activeadmin-mongoid-localize/formtastic'
+
+require 'activeadmin-mongoid-localize/active_admin'
 require 'activeadmin-mongoid-localize/attributes_table'
 
 module ActiveAdmin
