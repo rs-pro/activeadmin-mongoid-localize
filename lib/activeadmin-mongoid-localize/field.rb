@@ -8,6 +8,10 @@ module ActiveAdmin
         @@validators = {}
         @@model = nil
 
+        def clean_locale(locale)
+          locale.to_s.gsub('-','_')
+        end
+
         def initialize(obj, name)
           @obj = obj
           @@model = obj.class
@@ -18,19 +22,21 @@ module ActiveAdmin
           hash = @obj.send("#{name}_translations")
 
           ::I18n.available_locales.each do |k|
+            inst_var_name = clean_locale(k) 
             ## create the getter that returns the instance variable
-            self.class.send(:define_method, k, proc{self.instance_variable_get("@#{k}")})
+            self.class.send(:define_method, k, proc{self.instance_variable_get("@#{inst_var_name}")})
 
             ## create the setter that sets the instance variable
-            self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{k}", v)})
+            self.class.send(:define_method, "#{k}=", proc{|v| self.instance_variable_set("@#{inst_var_name}", v)})
 
             ## create and initialize an instance variable for this key/value pair
-            self.instance_variable_set("@#{k}", '')
+            self.instance_variable_set("@#{inst_var_name}", '')
           end
 
           hash.each do |k,v|
             ## create and initialize an instance variable for this key/value pair
-            self.instance_variable_set("@#{k}", v)
+            inst_var_name = k.to_s.gsub('-','_')
+            self.instance_variable_set("@#{inst_var_name}", v)
           end
 
           def @obj.before_validation
