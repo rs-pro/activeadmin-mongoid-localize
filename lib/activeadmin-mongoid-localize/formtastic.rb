@@ -6,7 +6,7 @@ module Formtastic
 
       ret = ''
       self.semantic_fields_for "#{name}_translations", field do |lf|
-        ::I18n.available_locales.each do |locale|
+        ::ActiveAdmin::Mongoid::Localize.locales.each do |locale|
           args[:value] =  (t.nil? || t[locale.to_s].nil?) ? '' : t[locale.to_s]
           flag_code = locale.to_s.include?("-") ? locale.to_s.split("-")[1].downcase : locale.to_s
 

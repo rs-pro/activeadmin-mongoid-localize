@@ -10,6 +10,18 @@ module ActiveAdmin
     module Localize
       autoload :Field, 'activeadmin-mongoid-localize/field'
 
+      class << self
+        attr_writer :locales
+
+        def locales
+          @locales || I18n.available_locales
+        end
+
+        def configure
+          yield self
+        end
+      end
+
       class Engine < Rails::Engine
       end
     end

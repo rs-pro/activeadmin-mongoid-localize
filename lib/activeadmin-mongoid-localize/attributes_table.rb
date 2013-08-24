@@ -4,10 +4,11 @@ module ActiveAdmin
       builder_method :localize_attributes_table_for
 
       def row(attr, &block)
-        I18n.available_locales.each_with_index do |locale, index|
+        _locales = ActiveAdmin::Mongoid::Localize.locales
+        _locales.each_with_index do |locale, index|
           @table << tr do
             if index == 0
-              th :rowspan => I18n.available_locales.length do
+              th :rowspan => _locales.length do
                 header_content_for(attr)
               end
             end

@@ -21,7 +21,7 @@ module ActiveAdmin
           @errors = ActiveModel::Errors.new(self)
           hash = @obj.send("#{name}_translations")
 
-          ::I18n.available_locales.each do |k|
+          ::ActiveAdmin::Mongoid::Localize.locales.each do |k|
             inst_var_name = clean_locale(k) 
             ## create the getter that returns the instance variable
             self.class.send(:define_method, k, proc{self.instance_variable_get("@#{inst_var_name}")})
@@ -54,7 +54,7 @@ module ActiveAdmin
         end
 
         def validate!
-          ::I18n.available_locales.each do |k|
+          ::ActiveAdmin::Mongoid::Localize.locales.each do |k|
             if @required && send(k).blank?
               @errors.add(k, I18n.t('errors.messages.blank'))
             end
