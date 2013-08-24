@@ -4,6 +4,7 @@ require 'activeadmin-mongoid-localize/formtastic'
 
 require 'activeadmin-mongoid-localize/active_admin'
 require 'activeadmin-mongoid-localize/attributes_table'
+require 'activeadmin-mongoid-localize/columns'
 
 module ActiveAdmin
   module Mongoid

@@ -36,6 +36,11 @@ Really simple:
       f.localized_input :content, as: :ckeditor
     end
 
+    # displaying in index action
+    index do
+      localize_column :title
+    end
+
     # displaying in show action
     show do |f|
         panel I18n.t('fields') do
