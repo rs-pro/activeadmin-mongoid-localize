@@ -36,6 +36,11 @@ Really simple:
       f.localized_input :content, as: :ckeditor
     end
 
+    # displaying in index action
+    index do
+      localize_column :title
+    end
+
     # displaying in show action
     show do |f|
         panel I18n.t('fields') do
@@ -45,6 +50,20 @@ Really simple:
             end
         end
     end
+
+
+## Configuration
+
+By default this gem provides editable fields for all the available locales. If however, you would want to restrict to some particular locales, then create a new *'active_admin_mongoid_localize.rb'* file in the *'/config/initializers'* folder of your rails application:
+
+
+    ActiveAdmin::Mongoid::Localize.configure do |config|
+
+      config.locales = [:en, :ja]    # Specify the locales you want to use
+
+    end
+
+
 
 CKEditor is tested & working with my fork: https://github.com/glebtv/ckeditor
 
