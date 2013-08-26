@@ -4,7 +4,7 @@ Easily edit mongoid localized fields in ActiveAdmin (all locales on one page)
 
 ## Screenshot
 
- ![AML](http://rscx.ru/aml.jpg)
+ ![AML](https://rscx.ru/aml.jpg)
 
 ## Installation
 
