@@ -1,3 +1,9 @@
+# Updated version
+
+[activeadmin-localize](https://github.com/glebtv/activeadmin-localize)
+
+This repo is deprecated.
+
 # Activeadmin::Mongoid::Localize
 
 Easily edit mongoid localized fields in ActiveAdmin (all locales on one page)
